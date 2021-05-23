@@ -1,0 +1,29 @@
+.Container{
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    padding: 32px;
+}
+
+.Title{
+    color: rebeccapurple;
+}
+
+.in{
+    color: rebeccapurple;
+    align-items: flex-start;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: line;
+    border-radius: 4px;
+    padding: 32px;
+}
+
+.button{
+    margin-left: 5px;
+    padding: 2px;
+}
