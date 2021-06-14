@@ -1,20 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
 
-export class Confirma extends Component {
+const Confirma = ({ numero }) =>{
 
-    render(){
-        return(
-            <div className="Container">
-                <form onSubmit={this._pegarNum.bind(this)}>
-                    <div className="Title">
-                            <h1>A quantidades de resposta que você vai responder é </h1>
-                    </div>
-                    <div className="in">
-                        <button className="button">Start</button>
-                        <button className="button">Cancel</button>
-                    </div>
-                </form>
+    return(
+        <form  className="Container" >
+            <div className="Title" >
+                    <h1>A quantidades de resposta que você vai responder é {numero}</h1>
             </div>
-        );
-    }
+            <div className="in">
+                <Link className="button" to={`/perguntas/${numero}`}>
+                    <Button className="button" variant="contained" color="primary" >
+                        Start
+                    </Button>
+                </Link>
+                <Link className="button" to={`/`}>
+                    <Button variant="contained" color="primary" >
+                        Cancel
+                    </Button>
+                </Link>
+                
+            </div>
+        </form>
+    );
 }
+
+export default Confirma;

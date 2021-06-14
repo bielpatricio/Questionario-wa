@@ -1,0 +1,36 @@
+.Title{
+    color: rebeccapurple;
+}
+.Categoria{
+    color: gray;
+}
+.Dificuldade{
+    color: gray;
+}
+.Pergunta{
+    color: rebeccapurple;
+}
+.Pergunta-title{
+    color: black
+}
+.Paper{
+    max-width: 1600;
+    margin: auto;
+    padding: auto;
+    padding-left: 20px;
+    background-color: gray;
+}
+.RespostaCerta{
+    color: rgb(47, 63, 43);
+    padding: auto;
+    padding-left: 8px;
+}
+.RespostaErrada{
+    color: rgb(63, 44, 43);
+    padding: auto;
+    padding-left: 8px;
+}
+.Button{
+    margin: auto;
+    padding: 8px;
+}

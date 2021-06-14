@@ -1,26 +1,33 @@
-import React, { Component } from 'react';
-import QuantRespostas from './components/QuantRespostas/QuantRespostas';
+import React, { useState } from 'react';
+import QuantRespostas from './components/QuantRespostas/QuantRespostas.jsx';
+import Perguntas from './components/Perguntas/Perguntas.jsx';
+import Confirmacao from './components/Confirmacao/Confirmacao.jsx';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-class App extends Component() {
+function App(){
+    const [num, setNum] = useState(0);
 
-  constructor(){
-    super();
-    this.state = {};
-  }
+    const dados = (dado) => {
+      setNum(dado);
+    }
 
-  pegarNum(num) {
-    const num = {num};
-    this.setState({
-      num:this.num
-    })
-  }
-  render(){
     return (
-      <div className="container">
-        <QuantRespostas pegarNum={this.pegarNum.bind(this)}/>
-      </div>
+    
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact={true}>
+            <QuantRespostas aoEnviar={dados}/>
+          </Route>
+          <Route path="/confirmacao" exact={true}>
+            <Confirmacao numero={num}/>
+          </Route>
+          <Route path='/perguntas/:numero' exact={true}>
+            <Perguntas />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     );
-  }
+    
 }
 
 export default App;
